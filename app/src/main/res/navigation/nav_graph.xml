@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homepageFragment">
+
+    <fragment
+        android:id="@+id/homepageFragment"
+        android:name="com.example.appwijnhuisronny.HomepageFragment"
+        android:label="fragment_homepage"
+        tools:layout="@layout/fragment_homepage" >
+        <action
+            android:id="@+id/action_homepageFragment_to_winesFragment"
+            app:destination="@id/winesFragment" />
+        <action
+            android:id="@+id/action_homepageFragment_to_shoppingCartFragment"
+            app:destination="@id/shoppingCartFragment" />
+        <action
+            android:id="@+id/action_homepageFragment_to_wineTastingsFragment"
+            app:destination="@id/wineTastingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoppingCartFragment"
+        android:name="com.example.appwijnhuisronny.ShoppingCartFragment"
+        android:label="fragment_shopping_cart"
+        tools:layout="@layout/fragment_shopping_cart" />
+    <fragment
+        android:id="@+id/wineTastingsFragment"
+        android:name="com.example.appwijnhuisronny.WineTastingsFragment"
+        android:label="fragment_wine_tastings"
+        tools:layout="@layout/fragment_wine_tastings" >
+        <action
+            android:id="@+id/action_wineTastingsFragment_self"
+            app:destination="@id/wineTastingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/winesFragment"
+        android:name="com.example.appwijnhuisronny.WinesFragment"
+        android:label="fragment_wines"
+        tools:layout="@layout/fragment_wines" />
+</navigation>

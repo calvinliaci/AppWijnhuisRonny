@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homepageFragment"
+        android:icon="@drawable/baseline_home_24"
+        android:title="Thuis"/>
+
+    <item
+        android:id="@+id/winesFragment"
+        android:icon="@drawable/baseline_wine_bar_24"
+        android:title="Wijnen"/>
+
+    <item
+        android:id="@+id/wineTastingsFragment"
+        android:icon="@drawable/baseline_access_time_24"
+        android:title="Degustaties"/>
+
+    <item
+        android:id="@+id/shoppingCartFragment"
+        android:icon="@drawable/baseline_shopping_cart_24"
+        android:title="Winkelmand"/>
+</menu>
