@@ -11,14 +11,14 @@
         android:label="fragment_homepage"
         tools:layout="@layout/fragment_homepage" >
         <action
-            android:id="@+id/action_homepageFragment_to_winesFragment"
-            app:destination="@id/winesFragment" />
-        <action
             android:id="@+id/action_homepageFragment_to_shoppingCartFragment"
             app:destination="@id/shoppingCartFragment" />
         <action
             android:id="@+id/action_homepageFragment_to_wineTastingsFragment"
             app:destination="@id/wineTastingsFragment" />
+        <action
+            android:id="@+id/action_homepageFragment_to_winesCategoryFragment"
+            app:destination="@id/winesCategoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/shoppingCartFragment"
@@ -35,8 +35,8 @@
             app:destination="@id/wineTastingsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/winesFragment"
-        android:name="com.example.appwijnhuisronny.WinesFragment"
-        android:label="fragment_wines"
-        tools:layout="@layout/fragment_wines" />
+        android:id="@+id/winesCategoryFragment"
+        android:name="com.example.appwijnhuisronny.WinesCategoryFragment"
+        android:label="fragment_wines_category"
+        tools:layout="@layout/fragment_wines_category" />
 </navigation>

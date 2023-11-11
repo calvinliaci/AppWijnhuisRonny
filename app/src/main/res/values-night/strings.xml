@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sloganText">Waar passie, wijn en kwaliteit samenkomen...</string>
+    <string name="witte_wijnen_category">Witte wijnen</string>
+    <string name="rode_wijnen_category">Rode wijnen</string>
+    <string name="rose_wijn_category">Rose wijnen</string>
+    <string name="bubbles_category">Bubbels</string>
+    <string name="porto_category">Porto</string>
+    <string name="overig_category">Overig</string>
+</resources>

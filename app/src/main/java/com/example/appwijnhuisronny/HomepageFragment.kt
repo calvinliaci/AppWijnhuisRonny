@@ -6,26 +6,32 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.appwijnhuisronny.databinding.FragmentHomepageBinding
 
 class HomepageFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = HomepageFragment()
-    }
+    private var _binding: FragmentHomepageBinding? = null
+    private val binding get() = _binding!!
 
     private lateinit var viewModel: HomepageFragmentViewModel
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_homepage, container, false)
-    }
+        //return inflater.inflate(R.layout.fragment_homepage, container, false)
+        _binding = FragmentHomepageBinding.inflate(inflater, container, false)
+        val view = binding.root
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(HomepageFragmentViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
+        binding.homepageFragmentViewModel = viewModel
+
+        return view
+    }
 }

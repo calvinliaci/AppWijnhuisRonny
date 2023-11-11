@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WinesCategoryFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:background="@drawable/witte_wijn_achtergrond">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/nunito_sans"
+                android:text="@string/witte_wijnen_category"
+                android:textColor="@color/white"
+                android:textSize="24dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rode_wijn_achtergrond">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/nunito_sans"
+                android:text="@string/rode_wijnen_category"
+                android:textColor="@color/white"
+                android:textSize="24dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rose_wijn_achtergrond__2_">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/nunito_sans"
+                android:text="@string/rose_wijn_category"
+                android:textColor="@color/white"
+                android:textSize="24dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bubbels_achtergrond">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/nunito_sans"
+                android:text="@string/bubbles_category"
+                android:textColor="@color/white"
+                android:textSize="24dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/porto_achtergrond">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/nunito_sans"
+                android:text="@string/porto_category"
+                android:textColor="@color/white"
+                android:textSize="24dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/gin_achtergrond">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/nunito_sans"
+                android:text="@string/gin_category"
+                android:textColor="@color/white"
+                android:textSize="24dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/overig_achtergrond">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/nunito_sans"
+                android:text="@string/overig_category"
+                android:textColor="@color/white"
+                android:textSize="24dp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

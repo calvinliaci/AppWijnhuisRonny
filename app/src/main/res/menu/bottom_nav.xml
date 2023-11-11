@@ -6,7 +6,7 @@
         android:title="Thuis"/>
 
     <item
-        android:id="@+id/winesFragment"
+        android:id="@+id/winesCategoryFragment"
         android:icon="@drawable/baseline_wine_bar_24"
         android:title="Wijnen"/>
 
