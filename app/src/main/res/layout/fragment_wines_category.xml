@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".WinesCategoryFragment">
+
+    <data>
+        <variable
+            name="winesCategoryFragmentViewModel"
+            type="com.example.appwijnhuisronny.WinesCategoryViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,9 +20,11 @@
         android:orientation="vertical">
 
         <RelativeLayout
+            android:id="@+id/layout_witte_wijn"
             android:layout_width="match_parent"
             android:layout_height="175dp"
-            android:background="@drawable/witte_wijn_achtergrond">
+            android:background="@drawable/witte_wijn_achtergrond"
+            android:onClick="onLayoutClick">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -29,10 +40,11 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/layout_rode_wijn"
             android:layout_width="match_parent"
             android:layout_height="175dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/rode_wijn_achtergrond">
+            android:background="@drawable/rode_wijn_achtergrond__2_">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -48,6 +60,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/layout_rose_wijn"
             android:layout_width="match_parent"
             android:layout_height="175dp"
             android:layout_marginTop="15dp"
@@ -70,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="175dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/bubbels_achtergrond">
+            android:background="@drawable/bubbels_achtergrond2">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -136,11 +149,12 @@
                 android:layout_centerInParent="true"
                 android:layout_marginBottom="0dp"
                 android:fontFamily="@font/nunito_sans"
-                android:text="@string/overig_category"
+                android:text="@string/overige_category"
                 android:textColor="@color/white"
                 android:textSize="24dp" />
 
         </RelativeLayout>
     </LinearLayout>
+    </ScrollView>
 
-</ScrollView>
+</layout>

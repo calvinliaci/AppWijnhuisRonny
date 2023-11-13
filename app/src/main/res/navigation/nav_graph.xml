@@ -38,5 +38,14 @@
         android:id="@+id/winesCategoryFragment"
         android:name="com.example.appwijnhuisronny.WinesCategoryFragment"
         android:label="fragment_wines_category"
-        tools:layout="@layout/fragment_wines_category" />
+        tools:layout="@layout/fragment_wines_category" >
+        <action
+            android:id="@+id/action_winesCategoryFragment_to_whiteWinesFragment"
+            app:destination="@id/whiteWinesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/whiteWinesFragment"
+        android:name="com.example.appwijnhuisronny.WhiteWinesFragment"
+        android:label="fragment_white_wines"
+        tools:layout="@layout/fragment_white_wines" />
 </navigation>
