@@ -42,6 +42,8 @@ class WhiteWineAdapter : RecyclerView.Adapter<WhiteWineAdapter.ViewHolder>() {
 
         holder.nameTextView.text = currentItem.Naam
         holder.priceTextView.text = currentItem.Prijs
+        holder.regioTextView.text = currentItem.Regio
+        holder.wijndomeinTextView.text = currentItem.Wijndomein
         Picasso.get().load(currentItem.Image).into(holder.imageView)
         Picasso.get().load(currentItem.BackgroundImage).into(holder.backgroundImageView)
     }
@@ -49,6 +51,8 @@ class WhiteWineAdapter : RecyclerView.Adapter<WhiteWineAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val nameTextView: TextView = view.findViewById(R.id.textName)
         val priceTextView: TextView = view.findViewById(R.id.textPriceAmount)
+        val regioTextView: TextView = view.findViewById(R.id.textRegio)
+        val wijndomeinTextView: TextView = view.findViewById(R.id.textWijndomein)
         val imageView: ImageView = view.findViewById(R.id.imageWine)
         val backgroundImageView: ImageView = view.findViewById(R.id.backgroundImage)
     }

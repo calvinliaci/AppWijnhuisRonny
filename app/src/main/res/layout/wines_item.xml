@@ -44,6 +44,14 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/imageWine"
                 android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textWijndomein"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Ciavolich"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="18sp" />
 
                 <!-- Wine Name -->
                 <TextView
@@ -60,9 +68,19 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
                     <TextView
+                        android:id="@+id/textRegio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:text="Italië, Abruzzo"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="14sp" />
+                    <TextView
                         android:id="@+id/textPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="140dp"
                         android:text="Price:"
                         android:textColor="@android:color/darker_gray"
                         android:textSize="14sp" />
@@ -70,10 +88,11 @@
                         android:id="@+id/textPriceAmount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="40dp"
                         android:text="10"
                         android:textColor="@android:color/darker_gray"
-                        android:textSize="16sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
