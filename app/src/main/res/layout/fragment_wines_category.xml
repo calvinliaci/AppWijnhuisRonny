@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     tools:context=".WinesCategoryFragment">
@@ -19,141 +20,250 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <RelativeLayout
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_witte_wijn"
             android:layout_width="match_parent"
-            android:layout_height="175dp"
-            android:background="@drawable/witte_wijn_achtergrond"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:onClick="onLayoutClick">
 
+            <ImageView
+                android:id="@+id/image_witte_wijn"
+                android:background="@drawable/witte_wijn_achtergrond"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="16:7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
-                android:layout_marginBottom="0dp"
-                android:fontFamily="@font/nunito_sans"
+                android:fontFamily="@font/nunito_sans_extralight"
                 android:text="@string/witte_wijnen_category"
                 android:textColor="@color/white"
-                android:textSize="24dp" />
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_rode_wijn"
             android:layout_width="match_parent"
-            android:layout_height="175dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/rode_wijn_achtergrond__2_">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:onClick="onLayoutClick">
+
+            <ImageView
+                android:id="@+id/image_rode_wijn"
+                android:background="@drawable/rode_wijn_achtergrond__2_"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="16:7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
-                android:layout_marginBottom="0dp"
-                android:fontFamily="@font/nunito_sans"
+                android:fontFamily="@font/nunito_sans_extralight"
                 android:text="@string/rode_wijnen_category"
                 android:textColor="@color/white"
-                android:textSize="24dp" />
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_rose_wijn"
             android:layout_width="match_parent"
-            android:layout_height="175dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/rose_wijn_achtergrond__2_">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:onClick="onLayoutClick">
+
+            <ImageView
+                android:id="@+id/image_rose_wijn"
+                android:background="@drawable/rose_wijn_achtergrond__2_"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="16:7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
-                android:layout_marginBottom="0dp"
-                android:fontFamily="@font/nunito_sans"
+                android:fontFamily="@font/nunito_sans_extralight"
                 android:text="@string/rose_wijn_category"
                 android:textColor="@color/white"
-                android:textSize="24dp" />
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_bubbels_wijn"
             android:layout_width="match_parent"
-            android:layout_height="175dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/bubbels_achtergrond2">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:onClick="onLayoutClick">
+
+            <ImageView
+                android:id="@+id/image_bubbels"
+                android:background="@drawable/bubbels_achtergrond2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="16:7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
-                android:layout_marginBottom="0dp"
-                android:fontFamily="@font/nunito_sans"
+                android:fontFamily="@font/nunito_sans_extralight"
                 android:text="@string/bubbles_category"
                 android:textColor="@color/white"
-                android:textSize="24dp" />
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_porto"
             android:layout_width="match_parent"
-            android:layout_height="175dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/porto_achtergrond">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:onClick="onLayoutClick">
+
+            <ImageView
+                android:id="@+id/image_porto"
+                android:background="@drawable/porto_achtergrond"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="16:7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
-                android:layout_marginBottom="0dp"
-                android:fontFamily="@font/nunito_sans"
+                android:fontFamily="@font/nunito_sans_extralight"
                 android:text="@string/porto_category"
                 android:textColor="@color/white"
-                android:textSize="24dp" />
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_gins"
             android:layout_width="match_parent"
-            android:layout_height="175dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/gin_achtergrond">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:onClick="onLayoutClick">
+
+            <ImageView
+                android:id="@+id/image_gins"
+                android:background="@drawable/gin_achtergrond"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="16:7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
-                android:layout_marginBottom="0dp"
-                android:fontFamily="@font/nunito_sans"
+                android:fontFamily="@font/nunito_sans_extralight"
                 android:text="@string/gin_category"
                 android:textColor="@color/white"
-                android:textSize="24dp" />
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_overige"
             android:layout_width="match_parent"
-            android:layout_height="175dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/overig_achtergrond">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:onClick="onLayoutClick">
+
+            <ImageView
+                android:id="@+id/image_overige"
+                android:background="@drawable/overig_achtergrond"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="16:7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
-                android:layout_marginBottom="0dp"
-                android:fontFamily="@font/nunito_sans"
+                android:fontFamily="@font/nunito_sans_extralight"
                 android:text="@string/overige_category"
                 android:textColor="@color/white"
-                android:textSize="24dp" />
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
     </ScrollView>
 

@@ -32,6 +32,7 @@ class HomepageFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(HomepageFragmentViewModel::class.java)
 
         binding.homepageFragmentViewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
 
         return view
     }

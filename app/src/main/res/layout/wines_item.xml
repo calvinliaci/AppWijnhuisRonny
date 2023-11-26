@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="WhiteWinesFragmentViewModel"
+            type="com.example.appwijnhuisronny.WhiteWinesFragmentViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/wineCardView"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="8dp"
+        android:layout_marginBottom="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="horizontal">
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:layout_marginEnd="10dp">
+                    <ImageView
+                        android:id="@+id/backgroundImage"
+                        android:layout_width="100dp"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:background="@color/white"/>
+                    <!-- Wine Picture on the Left -->
+                    <ImageView
+                        android:id="@+id/imageWine"
+                        android:layout_width="100dp"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/cococciola_ciavolich_removebg_preview"/>
+
+            </FrameLayout>
+
+            <!-- Name and Price on the Right -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imageWine"
+                android:orientation="vertical">
+
+                <!-- Wine Name -->
+                <TextView
+                    android:id="@+id/textName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cocciola"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <!-- Wine Price -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/textPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Price:"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/textPriceAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="10"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>
