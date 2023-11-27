@@ -1,22 +1,22 @@
 package com.example.appwijnhuisronny.Adapters
 
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appwijnhuisronny.Models.Wine
 import com.example.appwijnhuisronny.R
+import com.example.appwijnhuisronny.WhiteWinesFragment
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
 import java.lang.Exception
 
-class WhiteWineAdapter : RecyclerView.Adapter<WhiteWineAdapter.ViewHolder>() {
+class WhiteWineAdapter(private val addToCartClickListener: OnAddToCartClickListener) :
+    RecyclerView.Adapter<WhiteWineAdapter.ViewHolder>() {
 
     private val winesList = ArrayList<Wine>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -42,18 +42,25 @@ class WhiteWineAdapter : RecyclerView.Adapter<WhiteWineAdapter.ViewHolder>() {
 
         holder.nameTextView.text = currentItem.Naam
         holder.priceTextView.text = currentItem.Prijs
-        holder.regioTextView.text = currentItem.Regio
         holder.wijndomeinTextView.text = currentItem.Wijndomein
         Picasso.get().load(currentItem.Image).into(holder.imageView)
         Picasso.get().load(currentItem.BackgroundImage).into(holder.backgroundImageView)
+
+        holder.addToCartButton.setOnClickListener {
+            addToCartClickListener.onAddToCartClick(currentItem)
+        }
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val nameTextView: TextView = view.findViewById(R.id.textName)
         val priceTextView: TextView = view.findViewById(R.id.textPriceAmount)
-        val regioTextView: TextView = view.findViewById(R.id.textRegio)
         val wijndomeinTextView: TextView = view.findViewById(R.id.textWijndomein)
         val imageView: ImageView = view.findViewById(R.id.imageWine)
         val backgroundImageView: ImageView = view.findViewById(R.id.backgroundImage)
+        val addToCartButton: Button = view.findViewById(R.id.addToCartButton)
+    }
+
+    interface OnAddToCartClickListener {
+        fun onAddToCartClick(wine: Wine)
     }
 }
