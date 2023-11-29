@@ -21,10 +21,4 @@ class WhiteWinesFragmentViewModel : ViewModel() {
         Log.d("ViewModel", "ViewModel initialized")
     }
 
-    fun addToCart(item: Wine) {
-        val currentList = _shoppingCart.value ?: emptyList()
-        val updatedList = currentList.toMutableList()
-        updatedList.add(item)
-        _shoppingCart.value = updatedList
-    }
 }

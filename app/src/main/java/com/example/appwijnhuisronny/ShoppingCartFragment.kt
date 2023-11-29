@@ -2,6 +2,7 @@ package com.example.appwijnhuisronny
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -22,11 +23,12 @@ class ShoppingCartFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //return inflater.inflate(R.layout.fragment_shopping_cart, container, false)
         _binding = FragmentShoppingCartBinding.inflate(inflater, container, false)
         val view = binding.root
+        Log.d("ShoppingCartFragment", "FragmentShoppingCartBinding inflated")
 
-        viewModel = ViewModelProvider(this).get(ShoppingCartViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(ShoppingCartViewModel::class.java)
+        Log.d("ShoppingCartFragment", "ShoppingCartViewModel initialized")
 
         binding.shoppingCartFragmentViewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
@@ -38,16 +40,17 @@ class ShoppingCartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.shoppingCart.observe(viewLifecycleOwner) { cartItems ->
+            adapter.updateCartItems(cartItems)
+            Log.d("ShoppingCartFragment", "Observed changes in shopping cart: $cartItems")
+        }
+        Log.d("ShoppingCartFragment", "onViewCreated called")
+
 
         adapter = ShoppingCartAdapter()
         binding.shoppingCartRecyclerView.adapter = adapter
-
         binding.shoppingCartRecyclerView.layoutManager = LinearLayoutManager(context)
 
-        viewModel.shoppingCart.observe(viewLifecycleOwner) { cartItems ->
-            adapter.updateCartItems(cartItems)
-        }
 
     }
-
 }

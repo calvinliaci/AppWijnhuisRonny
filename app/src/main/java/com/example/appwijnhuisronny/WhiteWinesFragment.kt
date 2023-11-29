@@ -2,6 +2,7 @@ package com.example.appwijnhuisronny
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +20,8 @@ class WhiteWinesFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var viewModel: WhiteWinesFragmentViewModel
+    private lateinit var viewModel2: ShoppingCartViewModel
+
     private lateinit var adapter: WhiteWineAdapter
     private lateinit var winesRecyclerView: RecyclerView
 
@@ -32,7 +35,9 @@ class WhiteWinesFragment : Fragment() {
         _binding = FragmentWhiteWinesBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        viewModel = ViewModelProvider(this).get(WhiteWinesFragmentViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(WhiteWinesFragmentViewModel::class.java)
+        viewModel2 = ViewModelProvider(requireActivity()).get(ShoppingCartViewModel::class.java)
+
 
         binding.whiteWinesFragmentViewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
@@ -48,13 +53,14 @@ class WhiteWinesFragment : Fragment() {
         winesRecyclerView.setHasFixedSize(true)
 
         adapter = WhiteWineAdapter { wine ->
-            viewModel.addToCart(wine)
+            viewModel2.addToCart(wine)
         }
 
         winesRecyclerView.adapter = adapter
 
         viewModel.allWines.observe(viewLifecycleOwner, Observer {
             adapter.updateWinesList(it)
+            Log.d("WhiteWinesFragment", "Observed changes in allWines: $it")
         })
     }
 }

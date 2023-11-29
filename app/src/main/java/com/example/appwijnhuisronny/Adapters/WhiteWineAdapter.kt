@@ -1,5 +1,6 @@
 package com.example.appwijnhuisronny.Adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,6 +48,7 @@ class WhiteWineAdapter(private val addToCartClickListener: (Wine) -> Unit) : Rec
 
         holder.addToCartButton.setOnClickListener {
             addToCartClickListener.invoke(currentItem)
+            Log.d("WhiteWineAdapter", "Item added to cart: $currentItem")
         }
     }
 
