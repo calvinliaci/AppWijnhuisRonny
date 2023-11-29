@@ -15,8 +15,7 @@ import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
 import java.lang.Exception
 
-class WhiteWineAdapter(private val addToCartClickListener: OnAddToCartClickListener) :
-    RecyclerView.Adapter<WhiteWineAdapter.ViewHolder>() {
+class WhiteWineAdapter(private val addToCartClickListener: (Wine) -> Unit) : RecyclerView.Adapter<WhiteWineAdapter.ViewHolder>() {
 
     private val winesList = ArrayList<Wine>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -47,7 +46,7 @@ class WhiteWineAdapter(private val addToCartClickListener: OnAddToCartClickListe
         Picasso.get().load(currentItem.BackgroundImage).into(holder.backgroundImageView)
 
         holder.addToCartButton.setOnClickListener {
-            addToCartClickListener.onAddToCartClick(currentItem)
+            addToCartClickListener.invoke(currentItem)
         }
     }
 
@@ -58,9 +57,5 @@ class WhiteWineAdapter(private val addToCartClickListener: OnAddToCartClickListe
         val imageView: ImageView = view.findViewById(R.id.imageWine)
         val backgroundImageView: ImageView = view.findViewById(R.id.backgroundImage)
         val addToCartButton: Button = view.findViewById(R.id.addToCartButton)
-    }
-
-    interface OnAddToCartClickListener {
-        fun onAddToCartClick(wine: Wine)
     }
 }

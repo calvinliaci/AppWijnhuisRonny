@@ -12,5 +12,4 @@ data class Wine(
     var Prijs : String ?= null,
     var Regio : String ?= null,
     var Wijndomein : String ?= null,
-    val quantity: MutableLiveData<Int> = MutableLiveData(0)
 )

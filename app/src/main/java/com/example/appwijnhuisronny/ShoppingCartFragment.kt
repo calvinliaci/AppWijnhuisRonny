@@ -39,11 +39,10 @@ class ShoppingCartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = ShoppingCartAdapter(this)
-
-        // Set up the RecyclerView with the adapter
-        binding.shoppingCartRecyclerView.layoutManager = LinearLayoutManager(context)
+        adapter = ShoppingCartAdapter()
         binding.shoppingCartRecyclerView.adapter = adapter
+
+        binding.shoppingCartRecyclerView.layoutManager = LinearLayoutManager(context)
 
         viewModel.shoppingCart.observe(viewLifecycleOwner) { cartItems ->
             adapter.updateCartItems(cartItems)

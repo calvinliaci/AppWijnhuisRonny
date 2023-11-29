@@ -13,7 +13,7 @@ import com.example.appwijnhuisronny.Adapters.WhiteWineAdapter
 import com.example.appwijnhuisronny.Models.Wine
 import com.example.appwijnhuisronny.databinding.FragmentWhiteWinesBinding
 
-class WhiteWinesFragment : Fragment(), WhiteWineAdapter.OnAddToCartClickListener {
+class WhiteWinesFragment : Fragment() {
 
     private var _binding: FragmentWhiteWinesBinding? = null
     private val binding get() = _binding!!
@@ -46,16 +46,15 @@ class WhiteWinesFragment : Fragment(), WhiteWineAdapter.OnAddToCartClickListener
         winesRecyclerView = view.findViewById(R.id.wineRecyclerView)
         winesRecyclerView.layoutManager = LinearLayoutManager(context)
         winesRecyclerView.setHasFixedSize(true)
-        adapter = WhiteWineAdapter(this)
+
+        adapter = WhiteWineAdapter { wine ->
+            viewModel.addToCart(wine)
+        }
+
         winesRecyclerView.adapter = adapter
 
         viewModel.allWines.observe(viewLifecycleOwner, Observer {
             adapter.updateWinesList(it)
         })
-    }
-
-    override fun onAddToCartClick(wine: Wine) {
-        viewModel.addToCart(wine)
-        // Optionally, you can show a confirmation message or update UI
     }
 }

@@ -7,8 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.appwijnhuisronny.Models.Wine
 import com.example.appwijnhuisronny.R
 
-class ShoppingCartAdapter(private val addToCartClickListener: WhiteWineAdapter.OnAddToCartClickListener) :
-    RecyclerView.Adapter<ShoppingCartAdapter.ViewHolder>() {
+class ShoppingCartAdapter() : RecyclerView.Adapter<ShoppingCartAdapter.ViewHolder>() {
 
     private val cartItems = mutableListOf<Wine>()
 
