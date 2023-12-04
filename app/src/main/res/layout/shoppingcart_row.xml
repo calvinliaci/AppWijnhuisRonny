@@ -15,23 +15,20 @@
 
         <ImageView
             android:id="@+id/productImageView"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:padding="8dp"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
             android:src="@drawable/cococciola_ciavolich_removebg_preview"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
             android:id="@+id/productNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="0dp"
+            android:fontFamily="@font/nunito_sans_extralight"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintStart_toEndOf="@+id/productImageView"
@@ -43,6 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Qty"
+            android:fontFamily="@font/nunito_sans_extralight"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/productNameTextView"
@@ -58,6 +56,7 @@
             app:layout_constraintStart_toEndOf="@+id/textView"
             app:layout_constraintTop_toTopOf="@+id/textView"
 
+
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             />
 
@@ -66,26 +65,24 @@
             android:id="@+id/deleteProductButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
             android:background="?android:attr/selectableItemBackground"
             android:padding="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/quantitySpinner"
-            app:layout_constraintStart_toEndOf="@+id/quantitySpinner"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/quantitySpinner"
-            app:srcCompat="@drawable/baseline_shopping_cart_24" />
+            app:srcCompat="@drawable/baseline_delete_24" />
 
         <TextView
             android:id="@+id/productTotalPriceTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:fontFamily="@font/nunito_sans_extralight"
+            android:text="$12.55"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:text="$12.55" />
+            app:layout_constraintBottom_toBottomOf="@+id/quantitySpinner"
+            app:layout_constraintEnd_toStartOf="@+id/deleteProductButton"
+            app:layout_constraintStart_toEndOf="@+id/quantitySpinner"
+            app:layout_constraintTop_toTopOf="@+id/quantitySpinner" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
