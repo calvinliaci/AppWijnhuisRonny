@@ -9,81 +9,129 @@
             type="com.example.appwijnhuisronny.ShoppingCartViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/wineCardView"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/productImageView"
-            android:layout_width="100dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        android:layout_marginBottom="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:src="@drawable/cococciola_ciavolich_removebg_preview"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="horizontal">
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:layout_marginEnd="10dp">
+                <ImageView
+                    android:id="@+id/backgroundImage"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:scaleType="centerCrop"
+                    android:background="@color/white"/>
+                <!-- Wine Picture on the Left -->
+                <ImageView
+                    android:id="@+id/imageWine"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/cococciola_ciavolich_removebg_preview"/>
+
+            </FrameLayout>
+
+            <!-- Name and Price on the Right -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imageWine"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textWijndomein"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/nunito_sans_extralight"
+                    android:text="Ciavolich"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="16sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="92dp">
+
+                    <TextView
+                        android:id="@+id/productNameTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_sans_extralight"
+                        android:text="Cocciola"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/QtyTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="@font/nunito_sans_extralight"
+                        android:text="Aantal:"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@id/aantalTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="@font/nunito_sans_extralight"
+                        android:text="6"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/QtyTextView"
+                        app:layout_constraintStart_toEndOf="@+id/QtyTextView"
+                        app:layout_constraintTop_toTopOf="@+id/QtyTextView" />
 
 
-        <TextView
-            android:id="@+id/productNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
-            android:fontFamily="@font/nunito_sans_extralight"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintStart_toEndOf="@+id/productImageView"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="Cococciola" />
+                    <ImageButton
+                        android:id="@+id/deleteProductButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="4dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:srcCompat="@drawable/baseline_delete_24" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Qty"
-            android:fontFamily="@font/nunito_sans_extralight"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/productNameTextView"
-            app:layout_constraintTop_toBottomOf="@+id/productNameTextView" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_sans_extralight"
+                        android:text="$"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/productTotalPriceTextView"
+                        app:layout_constraintEnd_toStartOf="@+id/productTotalPriceTextView" />
 
-        <Spinner
-            android:id="@+id/quantitySpinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView"
-            app:layout_constraintStart_toEndOf="@+id/textView"
-            app:layout_constraintTop_toTopOf="@+id/textView"
+                    <TextView
+                        android:id="@+id/productTotalPriceTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="32dp"
+                        android:fontFamily="@font/nunito_sans_extralight"
+                        android:text="12.55"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/aantalTextView"
+                        app:layout_constraintEnd_toStartOf="@+id/deleteProductButton"
+                        app:layout_constraintTop_toTopOf="@+id/aantalTextView" />
 
-
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-            />
-
-
-        <ImageButton
-            android:id="@+id/deleteProductButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/selectableItemBackground"
-            android:padding="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/quantitySpinner"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/quantitySpinner"
-            app:srcCompat="@drawable/baseline_delete_24" />
-
-        <TextView
-            android:id="@+id/productTotalPriceTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_sans_extralight"
-            android:text="$12.55"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            app:layout_constraintBottom_toBottomOf="@+id/quantitySpinner"
-            app:layout_constraintEnd_toStartOf="@+id/deleteProductButton"
-            app:layout_constraintStart_toEndOf="@+id/quantitySpinner"
-            app:layout_constraintTop_toTopOf="@+id/quantitySpinner" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

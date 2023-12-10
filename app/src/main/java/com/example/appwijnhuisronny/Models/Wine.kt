@@ -1,7 +1,5 @@
 package com.example.appwijnhuisronny.Models
 
-import androidx.lifecycle.MutableLiveData
-
 data class Wine(
     var BackgroundImage: String? = null,
     var Image : String ?= null,
@@ -12,4 +10,7 @@ data class Wine(
     var Prijs : String ?= null,
     var Regio : String ?= null,
     var Wijndomein : String ?= null,
+    var Aantal : Int = 1,
+    var TotalPrice: Double = Prijs!!.toDouble()
+
 )

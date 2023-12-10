@@ -84,16 +84,28 @@
                         app:layout_constraintStart_toStartOf="parent" />
 
                     <TextView
-                        android:id="@+id/textPriceAmount"
+                        android:id="@+id/textEuro"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
+                        android:fontFamily="@font/nunito_sans_extralight"
+                        android:text="$"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textPrice" />
+
+
+                    <TextView
+                        android:id="@+id/textPriceAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:fontFamily="@font/nunito_sans_extralight"
                         android:text="10"
                         android:textColor="@android:color/darker_gray"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/textPrice" />
+                        app:layout_constraintStart_toEndOf="@+id/textEuro" />
 
                     <Button
                         android:id="@+id/addToCartButton"

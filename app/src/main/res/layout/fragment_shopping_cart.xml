@@ -33,8 +33,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_margin="8dp"
-            android:text="Total: $26"
+            android:text="Total: $0.00"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+
 
         <Button
             android:id="@+id/placeOrderButton"

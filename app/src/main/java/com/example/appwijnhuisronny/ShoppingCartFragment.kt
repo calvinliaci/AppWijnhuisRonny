@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.appwijnhuisronny.Adapters.ShoppingCartAdapter
+import com.example.appwijnhuisronny.Adapters.WhiteWineAdapter
 import com.example.appwijnhuisronny.databinding.FragmentHomepageBinding
 import com.example.appwijnhuisronny.databinding.FragmentShoppingCartBinding
 
@@ -46,8 +47,14 @@ class ShoppingCartFragment : Fragment() {
         }
         Log.d("ShoppingCartFragment", "onViewCreated called")
 
+        viewModel.totalAmount.observe(viewLifecycleOwner) { totalAmount ->
+            val formattedTotal = String.format("Total: $%.2f", totalAmount)
+            binding.orderTotalTextView.text = formattedTotal
+        }
 
-        adapter = ShoppingCartAdapter()
+        adapter = ShoppingCartAdapter { wine ->
+            viewModel.deleteItem(wine)
+        }
         binding.shoppingCartRecyclerView.adapter = adapter
         binding.shoppingCartRecyclerView.layoutManager = LinearLayoutManager(context)
 

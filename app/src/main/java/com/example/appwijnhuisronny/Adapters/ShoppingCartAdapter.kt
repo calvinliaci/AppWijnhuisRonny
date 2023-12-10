@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -12,7 +13,7 @@ import com.example.appwijnhuisronny.Models.Wine
 import com.example.appwijnhuisronny.R
 import com.squareup.picasso.Picasso
 
-class ShoppingCartAdapter() : RecyclerView.Adapter<ShoppingCartAdapter.ViewHolder>() {
+class ShoppingCartAdapter(private val deleteItemClickListener: (Wine) -> Unit) : RecyclerView.Adapter<ShoppingCartAdapter.ViewHolder>() {
 
     private val cartItems = mutableListOf<Wine>()
 
@@ -28,8 +29,15 @@ class ShoppingCartAdapter() : RecyclerView.Adapter<ShoppingCartAdapter.ViewHolde
         val currentItem = cartItems[position]
 
         holder.productNameTextView.text = currentItem.Naam
-        holder.productTotalPriceTextView.text = currentItem.Prijs
+        holder.productTotalPriceTextView.text = currentItem.TotalPrice.toString()
+        holder.quantityTextView.text = currentItem.Aantal.toString()
         Picasso.get().load(currentItem.Image).into(holder.productImageView)
+        Picasso.get().load(currentItem.BackgroundImage).into(holder.backgroundImageView)
+
+        holder.deleteItemButton.setOnClickListener {
+            // Roep de deleteItem-methode aan met het huidige item
+            deleteItemClickListener.invoke(currentItem)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -46,6 +54,9 @@ class ShoppingCartAdapter() : RecyclerView.Adapter<ShoppingCartAdapter.ViewHolde
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val productNameTextView: TextView = view.findViewById(R.id.productNameTextView)
         val productTotalPriceTextView: TextView = view.findViewById(R.id.productTotalPriceTextView)
-        val productImageView: ImageView = view.findViewById(R.id.productImageView)
+        val quantityTextView : TextView = view.findViewById(R.id.aantalTextView)
+        val productImageView: ImageView = view.findViewById(R.id.imageWine)
+        val backgroundImageView: ImageView = view.findViewById(R.id.backgroundImage)
+        val deleteItemButton : ImageButton = view.findViewById(R.id.deleteProductButton)
     }
 }
