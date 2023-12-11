@@ -64,4 +64,5 @@ dependencies {
 
     implementation("com.squareup.picasso:picasso:2.71828")
 
+    implementation("androidx.core:core-splashscreen:1.0.1")
 }

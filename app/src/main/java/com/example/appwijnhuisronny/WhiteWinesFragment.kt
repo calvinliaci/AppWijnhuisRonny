@@ -63,4 +63,9 @@ class WhiteWinesFragment : Fragment() {
             Log.d("WhiteWinesFragment", "Observed changes in allWines: $it")
         })
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

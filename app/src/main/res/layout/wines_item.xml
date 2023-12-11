@@ -109,14 +109,16 @@
 
                     <Button
                         android:id="@+id/addToCartButton"
-                        android:layout_width="83dp"
-                        android:layout_height="48dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginBottom="2dp"
-                        android:text="Cart"
-                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="103dp"
+                        android:layout_height="34dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="-2dp"
+                        android:fontFamily="@font/nunito_sans_extralight"
+                        android:text="Add to cart"
+                        android:textSize="11dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
         </LinearLayout>
