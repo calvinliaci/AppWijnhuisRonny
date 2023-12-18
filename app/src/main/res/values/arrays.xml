@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="delivery_options">
+        <item>Self Pickup (Free)</item>
+        <item>Delivery ($5)</item>
+    </array>
+</resources>

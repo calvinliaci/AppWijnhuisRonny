@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.appwijnhuisronny.Adapters.ShoppingCartAdapter
 import com.example.appwijnhuisronny.Adapters.WhiteWineAdapter
@@ -30,6 +31,10 @@ class ShoppingCartFragment : Fragment() {
 
         viewModel = ViewModelProvider(requireActivity()).get(ShoppingCartViewModel::class.java)
         Log.d("ShoppingCartFragment", "ShoppingCartViewModel initialized")
+        
+        binding.placeOrderButton.setOnClickListener {
+            view.findNavController().navigate(R.id.action_shoppingCartFragment_to_checkoutOrderFragment)
+        }
 
         binding.shoppingCartFragmentViewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner

@@ -24,7 +24,11 @@
         android:id="@+id/shoppingCartFragment"
         android:name="com.example.appwijnhuisronny.ShoppingCartFragment"
         android:label="fragment_shopping_cart"
-        tools:layout="@layout/fragment_shopping_cart" />
+        tools:layout="@layout/fragment_shopping_cart" >
+        <action
+            android:id="@+id/action_shoppingCartFragment_to_checkoutOrderFragment"
+            app:destination="@id/checkoutOrderFragment" />
+    </fragment>
     <fragment
         android:id="@+id/wineTastingsFragment"
         android:name="com.example.appwijnhuisronny.WineTastingsFragment"
@@ -48,4 +52,8 @@
         android:name="com.example.appwijnhuisronny.WhiteWinesFragment"
         android:label="fragment_white_wines"
         tools:layout="@layout/fragment_white_wines" />
+    <fragment
+        android:id="@+id/checkoutOrderFragment"
+        android:name="com.example.appwijnhuisronny.CheckoutOrderFragment"
+        android:label="CheckoutOrderFragment" />
 </navigation>
