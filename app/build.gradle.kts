@@ -31,6 +31,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    packagingOptions {
+        exclude("META-INF/NOTICE.md")
+        exclude("META-INF/LICENSE.md")
+    }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -65,4 +70,7 @@ dependencies {
     implementation("com.squareup.picasso:picasso:2.71828")
 
     implementation("androidx.core:core-splashscreen:1.0.1")
+
+    implementation("com.sun.mail:android-mail:1.6.6")
+    implementation("com.sun.mail:android-activation:1.6.7")
 }

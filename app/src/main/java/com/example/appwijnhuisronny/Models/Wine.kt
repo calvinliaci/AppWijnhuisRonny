@@ -12,5 +12,4 @@ data class Wine(
     var Wijndomein : String ?= null,
     var Aantal : Int = 1,
     var TotalPrice: Double = Prijs!!.toDouble()
-
 )

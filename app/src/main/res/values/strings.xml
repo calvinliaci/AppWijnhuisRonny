@@ -9,4 +9,13 @@
     <string name="porto_category">Porto</string>
     <string name="overig_category">Overig</string>
     <string name="overige_category">Overige</string>
+    <string name="voornaam">Voornaam</string>
+    <string name="achternaam">Achternaam</string>
+    <string name="straatEnNummer">Straat + nummer</string>
+    <string name="woonplaats">Woonplaats</string>
+    <string name="postcode">Postcode</string>
+    <string name="gsmNummer">GSM-nummer</string>
+    <string name="email">E-mailadres</string>
+    <string name="volledigeNaam">Volledige naam\n</string>
+    <string name="voornaamEnAchternaam">Volledige naam</string>
 </resources>

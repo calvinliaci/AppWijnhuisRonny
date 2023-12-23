@@ -1,12 +1,14 @@
 package com.example.appwijnhuisronny
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import com.example.appwijnhuisronny.databinding.FragmentCheckoutOrderBinding
+
 
 class CheckoutOrderFragment : Fragment() {
     private var _binding: FragmentCheckoutOrderBinding? = null
@@ -27,6 +29,12 @@ class CheckoutOrderFragment : Fragment() {
         binding.orderDetailsViewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
+        binding.checkoutButton.setOnClickListener(View.OnClickListener {
+            viewModel.getOrderDetailsAndSendConfirmation()
+            view.findNavController().navigate(R.id.action_checkoutOrderFragment_to_homepageFragment)
+        })
+
         return view
     }
+
 }

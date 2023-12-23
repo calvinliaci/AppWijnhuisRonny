@@ -1,0 +1,38 @@
+try {
+            // Configuratie van de e-mailserver (voorbeeld met Gmail)
+            val props = Properties()
+            props.put("mail.smtp.host", "smtp.gmail.com")
+            props.put("mail.smtp.port", "465")
+            props.put("mail.smtp.ssl.enable", "true")
+            props.put("mail.smtp.auth", "true")
+
+            // Authenticatiegegevens
+            val session: Session = Session.getDefaultInstance(props, object : Authenticator() {
+                override fun getPasswordAuthentication(): PasswordAuthentication? {
+                    return PasswordAuthentication("liacicalvin@gmail.com", "yezuuvjhcqqgpzjz")
+                }
+            })
+
+            // Maak een MimeMessage-object
+            val message = MimeMessage(session)
+
+            // Zet de afzender, ontvanger, onderwerp en berichttekst
+            message.setFrom(InternetAddress("liacicalvin@gmail.com"))
+            message.addRecipient(Message.RecipientType.TO, InternetAddress(recipientEmail))
+            message.setSubject("Hello")
+            message.setText("Hello")
+
+            // Verzend de e-mail
+            Thread {
+                try {
+                    Transport.send(message)
+                    Log.e("Email", "Sending email")
+                } catch (e: MessagingException) {
+                    e.printStackTrace()
+                    Log.e("Email", "Error sending email: ${e.message}")
+                }
+            }.start()
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Log.e("Email", "Error sending email: ${e.message}")
+        }
