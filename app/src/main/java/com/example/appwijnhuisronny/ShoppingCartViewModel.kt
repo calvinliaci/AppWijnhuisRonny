@@ -31,6 +31,7 @@ class ShoppingCartViewModel : ViewModel() {
         _shoppingCart.value = updatedList
 
         updateTotalAmount()
+        Log.d("ShoppingCartViewModel", "Item added to cart: $item")
         Log.d("ViewModel", "Item added to cart: $item")
         Log.d("ViewModel", "Cart Items: ${_shoppingCart.value}")
     }
@@ -71,5 +72,17 @@ class ShoppingCartViewModel : ViewModel() {
         val currentList = _shoppingCart.value ?: emptyList()
         val total = currentList.sumByDouble { it.TotalPrice ?: 0.00  }
         _totalAmount.postValue(total)
+    }
+
+    fun getShoppingCart(): List<Wine> {
+        val wines = _shoppingCart.value ?: emptyList()
+        Log.d("ShoppingCartViewModel", "Wines in cart: $wines")
+        return wines
+    }
+
+    fun getTotalAmount(): Double {
+        val total = _totalAmount.value ?: 0.00
+        Log.d("ShoppingCartViewModel", "Total price: $total")
+        return total
     }
 }

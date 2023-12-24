@@ -7,5 +7,5 @@ data class OrderDetails(
     val zipCode: String,
     val country: String,
     val phoneNumber: String,
-    val wines: List<Wine>
+
 )
