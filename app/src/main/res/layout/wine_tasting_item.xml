@@ -72,12 +72,12 @@
                 android:text="24 - 16   November"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/button"
+                app:layout_constraintBottom_toTopOf="@+id/wineTastingbutton"
                 app:layout_constraintStart_toStartOf="@+id/wineTastingType"
                 app:layout_constraintTop_toBottomOf="@+id/wineTastingType" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/wineTastingbutton"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginStart="20dp"
@@ -86,6 +86,7 @@
                 android:fontFamily="@font/nunito_sans_extralight"
                 android:text="Inschrijven!"
                 android:textSize="18dp"
+                android:onClick="onInschrijvenButtonClick"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/wineTastingImage"
                 app:layout_constraintStart_toStartOf="@+id/wineTastingImage" />

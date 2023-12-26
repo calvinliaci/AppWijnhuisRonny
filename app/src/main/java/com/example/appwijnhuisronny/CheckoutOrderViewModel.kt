@@ -5,11 +5,12 @@ import android.content.Intent
 import android.net.Uri
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import com.example.appwijnhuisronny.Models.OrderDetails
 import com.example.appwijnhuisronny.Models.Wine
 import com.example.appwijnhuisronny.databinding.FragmentCheckoutOrderBinding
 import java.lang.Exception
-class CheckoutOrderViewModel(application: Application) : AndroidViewModel(application) {
+class CheckoutOrderViewModel() : ViewModel() {
     fun getBodyText(orderDetails: OrderDetails, cartItems: List<Wine>, totalAmount: Double): String {
         val stringBuilder = StringBuilder()
 
@@ -34,6 +35,7 @@ class CheckoutOrderViewModel(application: Application) : AndroidViewModel(applic
 
         // Total price
         stringBuilder.append("Totaalprijs: €$totalAmount\n")
+        stringBuilder.append("Gelieve te betalen bij afhaal! (Cash/Payconiq)\n")
 
         return stringBuilder.toString()
     }

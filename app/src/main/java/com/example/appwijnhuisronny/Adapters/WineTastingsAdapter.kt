@@ -3,6 +3,7 @@ package com.example.appwijnhuisronny.Adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +11,7 @@ import com.example.appwijnhuisronny.Models.WineTasting
 import com.example.appwijnhuisronny.R
 import com.squareup.picasso.Picasso
 
-class WineTastingsAdapter : RecyclerView.Adapter<WineTastingsAdapter.ViewHolder>() {
+class WineTastingsAdapter(private val clickListener: OnInschrijvenClickListener) : RecyclerView.Adapter<WineTastingsAdapter.ViewHolder>() {
     private val wineTastingsList = ArrayList<WineTasting>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
@@ -30,6 +31,9 @@ class WineTastingsAdapter : RecyclerView.Adapter<WineTastingsAdapter.ViewHolder>
         notifyDataSetChanged()
     }
 
+    interface OnInschrijvenClickListener {
+        fun onInschrijvenClick(wineTasting: WineTasting)
+    }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = wineTastingsList[position]
 
@@ -37,6 +41,10 @@ class WineTastingsAdapter : RecyclerView.Adapter<WineTastingsAdapter.ViewHolder>
         holder.wineTastingPrice.text = currentItem.DegustatiePrijs
         holder.wineTastingDate.text = currentItem.Datum
         Picasso.get().load(currentItem.DegustatieImage).into(holder.imageView)
+
+        holder.wineTastingButton.setOnClickListener {
+            clickListener.onInschrijvenClick(currentItem)
+        }
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -44,5 +52,6 @@ class WineTastingsAdapter : RecyclerView.Adapter<WineTastingsAdapter.ViewHolder>
         val wineTastingPrice: TextView = view.findViewById(R.id.wineTastingPrice)
         val wineTastingDate: TextView = view.findViewById(R.id.wineTastingDate)
         val imageView: ImageView = view.findViewById(R.id.wineTastingImage)
+        val wineTastingButton: Button = view.findViewById(R.id.wineTastingbutton)
     }
 }

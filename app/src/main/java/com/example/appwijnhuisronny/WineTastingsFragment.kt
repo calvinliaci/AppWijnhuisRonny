@@ -1,5 +1,7 @@
 package com.example.appwijnhuisronny
 
+import android.content.Intent
+import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
@@ -12,10 +14,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appwijnhuisronny.Adapters.WhiteWineAdapter
 import com.example.appwijnhuisronny.Adapters.WineTastingsAdapter
+import com.example.appwijnhuisronny.Models.OrderDetails
+import com.example.appwijnhuisronny.Models.WineTasting
 import com.example.appwijnhuisronny.databinding.FragmentHomepageBinding
 import com.example.appwijnhuisronny.databinding.FragmentWineTastingsBinding
 
-class WineTastingsFragment : Fragment() {
+class WineTastingsFragment : Fragment(), WineTastingsAdapter.OnInschrijvenClickListener {
 
     private var _binding: FragmentWineTastingsBinding? = null
     private val binding get() = _binding!!
@@ -47,13 +51,30 @@ class WineTastingsFragment : Fragment() {
         wineTastingsRecyclerView.layoutManager = LinearLayoutManager(context)
         wineTastingsRecyclerView.setHasFixedSize(true)
 
-        adapter = WineTastingsAdapter()
-
+        adapter = WineTastingsAdapter(this)
         wineTastingsRecyclerView.adapter = adapter
 
         viewModel.allWineTastings.observe(viewLifecycleOwner, Observer {
             adapter.updateWineTastingsList(it)
             Log.d("WhiteWinesFragment", "Observed changes in allWines: $it")
         })
+    }
+
+    override fun onInschrijvenClick(wineTasting: WineTasting) {
+        try {
+            val subject = "Inschrijving degustatie"
+            val emailSub = "info@wijnhuisronny.be"
+
+            val intent = Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("mailto:")
+                putExtra(Intent.EXTRA_EMAIL, arrayOf(emailSub))
+                putExtra(Intent.EXTRA_SUBJECT, subject)
+                putExtra(Intent.EXTRA_TEXT, viewModel.getBodyText(wineTasting))
+
+            }
+            startActivity(intent)
+        } catch (e: Exception) {
+            Log.e("CheckoutOrderFragment", "Error during checkout: ${e.message}")
+        }
     }
 }
