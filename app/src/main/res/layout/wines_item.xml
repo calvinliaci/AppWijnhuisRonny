@@ -89,7 +89,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:fontFamily="@font/nunito_sans_extralight"
-                        android:text="$"
+                        android:text="@string/euroTeken"
                         android:textColor="@android:color/darker_gray"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -114,7 +114,7 @@
                         android:layout_marginEnd="4dp"
                         android:layout_marginBottom="-2dp"
                         android:fontFamily="@font/nunito_sans_extralight"
-                        android:text="Add to cart"
+                        android:text="@string/voegToe"
                         android:textSize="11dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent" />

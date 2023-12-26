@@ -6,7 +6,7 @@
 
     <data>
         <variable
-            name="wineTastingsFragmentViewModel"
+            name="wineTastingsViewModel"
             type="com.example.appwijnhuisronny.WineTastingsViewModel" />
     </data>
     <ScrollView

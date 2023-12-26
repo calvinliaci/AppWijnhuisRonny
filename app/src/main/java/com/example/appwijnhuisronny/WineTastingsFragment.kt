@@ -34,7 +34,7 @@ class WineTastingsFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(WineTastingsViewModel::class.java)
 
-        binding.wineTastingsFragmentViewModel = viewModel
+        binding.wineTastingsViewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
         return view
@@ -43,7 +43,7 @@ class WineTastingsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        wineTastingsRecyclerView = view.findViewById(R.id.wineTastingsRecyclerView)
+        wineTastingsRecyclerView = binding.wineTastingsRecyclerView
         wineTastingsRecyclerView.layoutManager = LinearLayoutManager(context)
         wineTastingsRecyclerView.setHasFixedSize(true)
 

@@ -78,7 +78,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
                         android:fontFamily="@font/nunito_sans_extralight"
-                        android:text="Aantal:"
+                        android:text="@string/aantal"
                         android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
@@ -113,7 +113,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nunito_sans_extralight"
-                        android:text="$"
+                        android:text="@string/euroTeken"
                         android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="@+id/productTotalPriceTextView"
                         app:layout_constraintEnd_toStartOf="@+id/productTotalPriceTextView" />

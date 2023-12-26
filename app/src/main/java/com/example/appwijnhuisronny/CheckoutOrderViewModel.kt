@@ -14,26 +14,26 @@ class CheckoutOrderViewModel(application: Application) : AndroidViewModel(applic
         val stringBuilder = StringBuilder()
 
         // Thank you message
-        stringBuilder.append("Order placed by: , ${orderDetails.name}!\n\n")
+        stringBuilder.append("Bestelling geplaatst door: , ${orderDetails.name}!\n\n")
 
         // Order details
-        stringBuilder.append("Order Details:\n")
-        stringBuilder.append("Name: ${orderDetails.name}\n")
-        stringBuilder.append("Email: ${orderDetails.email}\n")
-        stringBuilder.append("Address: ${orderDetails.address}\n")
-        stringBuilder.append("Zip Code: ${orderDetails.zipCode}\n")
-        stringBuilder.append("Country: ${orderDetails.country}\n")
-        stringBuilder.append("Phone Number: ${orderDetails.phoneNumber}\n\n")
+        stringBuilder.append("Besteldetails:\n")
+        stringBuilder.append("Naam: ${orderDetails.name}\n")
+        stringBuilder.append("E-mailadres: ${orderDetails.email}\n")
+        stringBuilder.append("Adres: ${orderDetails.address}\n")
+        stringBuilder.append("Postcode: ${orderDetails.zipCode}\n")
+        stringBuilder.append("Woonplaats: ${orderDetails.country}\n")
+        stringBuilder.append("GSM-nummer: ${orderDetails.phoneNumber}\n\n")
 
         // Bought wines
-        stringBuilder.append("Bought Wines:\n")
+        stringBuilder.append("Bestelde wijnen:\n")
         for (wine in cartItems) {
-            stringBuilder.append("${wine.Naam} - Quantity: ${wine.Aantal} - Total Price: $${wine.TotalPrice}\n")
+            stringBuilder.append("${wine.Naam} - Hoeveelheid: ${wine.Aantal} - Totaalprijs per wijn: €${wine.TotalPrice}\n")
         }
         stringBuilder.append("\n")
 
         // Total price
-        stringBuilder.append("Total Price: $$totalAmount\n")
+        stringBuilder.append("Totaalprijs: €$totalAmount\n")
 
         return stringBuilder.toString()
     }

@@ -53,7 +53,7 @@ class ShoppingCartFragment : Fragment() {
         Log.d("ShoppingCartFragment", "onViewCreated called")
 
         viewModel.totalAmount.observe(viewLifecycleOwner) { totalAmount ->
-            val formattedTotal = String.format("Total: $%.2f", totalAmount)
+            val formattedTotal = String.format("Total: €%.2f", totalAmount)
             binding.orderTotalTextView.text = formattedTotal
         }
 

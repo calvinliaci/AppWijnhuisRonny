@@ -18,4 +18,13 @@
     <string name="email">E-mailadres</string>
     <string name="volledigeNaam">Volledige naam\n</string>
     <string name="voornaamEnAchternaam">Volledige naam</string>
+    <string name="degNaam">Winterdegustatie</string>
+    <string name="degPrijs">€15</string>
+    <string name="degDatum">15 - 17 Januari</string>
+    <string name="Inschrijven">Inschrijven!</string>
+    <string name="voegToe">Voeg toe</string>
+    <string name="euroTeken">€</string>
+    <string name="aantal">Aantal:</string>
+    <string name="bestellingPlaatsen">Bestelling plaatsen!</string>
+    <string name="totalValue">Total: €0.00</string>
 </resources>
