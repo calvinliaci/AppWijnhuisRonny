@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appwijnhuisronny.Adapters.WhiteWineAdapter
@@ -76,5 +77,6 @@ class WineTastingsFragment : Fragment(), WineTastingsAdapter.OnInschrijvenClickL
         } catch (e: Exception) {
             Log.e("CheckoutOrderFragment", "Error during checkout: ${e.message}")
         }
+        view?.findNavController()?.navigate(R.id.action_wineTastingsFragment_to_homepageFragment)
     }
 }

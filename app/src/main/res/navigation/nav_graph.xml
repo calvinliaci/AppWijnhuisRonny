@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_wineTastingsFragment_self"
             app:destination="@id/wineTastingsFragment" />
+        <action
+            android:id="@+id/action_wineTastingsFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment" />
     </fragment>
     <fragment
         android:id="@+id/winesCategoryFragment"

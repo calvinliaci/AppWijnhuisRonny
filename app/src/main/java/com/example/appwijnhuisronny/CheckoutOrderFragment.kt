@@ -73,6 +73,7 @@ class CheckoutOrderFragment : Fragment() {
             } catch (e: Exception) {
                 Log.e("CheckoutOrderFragment", "Error during checkout: ${e.message}")
             }
+            view?.findNavController()?.navigate(R.id.action_checkoutOrderFragment_to_homepageFragment)
         }
 
         return view
