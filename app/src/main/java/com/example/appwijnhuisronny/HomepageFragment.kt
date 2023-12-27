@@ -1,12 +1,14 @@
 package com.example.appwijnhuisronny
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.appwijnhuisronny.databinding.FragmentHomepageBinding
+import com.squareup.picasso.Picasso
 
 class HomepageFragment : Fragment() {
 
@@ -15,12 +17,10 @@ class HomepageFragment : Fragment() {
 
     private lateinit var viewModel: HomepageFragmentViewModel
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //return inflater.inflate(R.layout.fragment_homepage, container, false)
         _binding = FragmentHomepageBinding.inflate(inflater, container, false)
         val view = binding.root
 
@@ -29,6 +29,22 @@ class HomepageFragment : Fragment() {
         binding.homepageFragmentViewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
+        // Observe changes in photo URLs and update ImageViews
+        viewModel.photoUrlsLiveData.observe(viewLifecycleOwner, Observer { photoUrls ->
+            if (photoUrls.isNotEmpty()) {
+                Picasso.get().load(photoUrls[0]).into(binding.imageView2)
+                Picasso.get().load(photoUrls[1]).into(binding.overOnsImageView)
+            }
+        })
+
+        // Load photo URLs
+        viewModel.loadPhotoUrls()
+
         return view
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

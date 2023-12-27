@@ -11,44 +11,94 @@
             type="com.example.appwijnhuisronny.HomepageFragmentViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/sloganTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/nunito_sans_extralight"
-            android:text="@string/sloganText"
-            android:textSize="24sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/photoCardView"
-            android:layout_width="0dp"
-            android:layout_height="225dp"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="3dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
-            app:cardUseCompatPadding="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sloganTextView">
+            <TextView
+                android:id="@+id/sloganTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/nunito_sans_extralight"
+                android:text="@string/wijnhuisRonnySlogan"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/homepagephoto" />
 
-        </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/photoCardView"
+                android:layout_width="0dp"
+                android:layout_height="228dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="3dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sloganTextView">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/homepagephoto" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/overOnsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/nunito_sans_extralight"
+                android:text="@string/overOns"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/sloganTextView"
+                app:layout_constraintTop_toBottomOf="@+id/photoCardView" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/overOnsCardView"
+                android:layout_width="159dp"
+                android:layout_height="300dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/overOnsTextView">
+
+                <ImageView
+                    android:id="@+id/overOnsImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/homepagephoto" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/overOnsTextView2"
+                android:layout_width="168dp"
+                android:layout_height="380dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/nunito_sans_extralight"
+                android:text="@string/overOnsText"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/overOnsCardView"
+                app:layout_constraintTop_toTopOf="@+id/overOnsCardView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>
