@@ -3,7 +3,7 @@
     <item
         android:id="@+id/homepageFragment"
         android:icon="@drawable/baseline_home_24"
-        android:title="Thuis"/>
+        android:title="Startpagina"/>
 
     <item
         android:id="@+id/winesCategoryFragment"
