@@ -47,14 +47,17 @@
         android:label="fragment_wines_category"
         tools:layout="@layout/fragment_wines_category" >
         <action
-            android:id="@+id/action_winesCategoryFragment_to_whiteWinesFragment"
-            app:destination="@id/whiteWinesFragment" />
+            android:id="@+id/action_winesCategoryFragment_to_winesFragment"
+            app:destination="@id/winesFragment" />
+        <argument
+            android:name="category"
+            app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/whiteWinesFragment"
-        android:name="com.example.appwijnhuisronny.WhiteWinesFragment"
+        android:id="@+id/winesFragment"
+        android:name="com.example.appwijnhuisronny.WinesFragment"
         android:label="fragment_white_wines"
-        tools:layout="@layout/fragment_white_wines" />
+        tools:layout="@layout/fragment_wines" />
     <fragment
         android:id="@+id/checkoutOrderFragment"
         android:name="com.example.appwijnhuisronny.CheckoutOrderFragment"

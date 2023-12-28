@@ -30,13 +30,45 @@ class WinesCategoryFragment : Fragment() {
         binding.winesCategoryFragmentViewModel = viewModel
 
         binding.layoutWitteWijn.setOnClickListener {
-            view.findNavController().navigate(R.id.action_winesCategoryFragment_to_whiteWinesFragment)
+            val bundle = Bundle()
+            bundle.putString("category", "WitteWijnen")
+            view.findNavController().navigate(R.id.action_winesCategoryFragment_to_winesFragment, bundle)
         }
+
         binding.layoutRodeWijn.setOnClickListener {
-            view.findNavController().navigate(R.id.action_winesCategoryFragment_to_whiteWinesFragment)
+            val bundle = Bundle()
+            bundle.putString("category", "RodeWijnen")
+            view.findNavController().navigate(R.id.action_winesCategoryFragment_to_winesFragment, bundle)
         }
+
         binding.layoutRoseWijn.setOnClickListener {
-            view.findNavController().navigate(R.id.action_winesCategoryFragment_to_whiteWinesFragment)
+            val bundle = Bundle()
+            bundle.putString("category", "RoseWijnen")
+            view.findNavController().navigate(R.id.action_winesCategoryFragment_to_winesFragment, bundle)
+        }
+
+        binding.layoutBubbelsWijn.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("category", "Bubbels")
+            view.findNavController().navigate(R.id.action_winesCategoryFragment_to_winesFragment, bundle)
+        }
+
+        binding.layoutPorto.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("category", "Porto")
+            view.findNavController().navigate(R.id.action_winesCategoryFragment_to_winesFragment, bundle)
+        }
+
+        binding.layoutGins.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("category", "Gins")
+            view.findNavController().navigate(R.id.action_winesCategoryFragment_to_winesFragment, bundle)
+        }
+
+        binding.layoutOverige.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("category", "Overige")
+            view.findNavController().navigate(R.id.action_winesCategoryFragment_to_winesFragment, bundle)
         }
 
         // Observe changes in photo URLs and update ImageViews

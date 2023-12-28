@@ -13,11 +13,8 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.appwijnhuisronny.Adapters.WhiteWineAdapter
 import com.example.appwijnhuisronny.Adapters.WineTastingsAdapter
-import com.example.appwijnhuisronny.Models.OrderDetails
 import com.example.appwijnhuisronny.Models.WineTasting
-import com.example.appwijnhuisronny.databinding.FragmentHomepageBinding
 import com.example.appwijnhuisronny.databinding.FragmentWineTastingsBinding
 
 class WineTastingsFragment : Fragment(), WineTastingsAdapter.OnInschrijvenClickListener {
@@ -57,7 +54,7 @@ class WineTastingsFragment : Fragment(), WineTastingsAdapter.OnInschrijvenClickL
 
         viewModel.allWineTastings.observe(viewLifecycleOwner, Observer {
             adapter.updateWineTastingsList(it)
-            Log.d("WhiteWinesFragment", "Observed changes in allWines: $it")
+            Log.d("WinesFragment", "Observed changes in allWines: $it")
         })
     }
 

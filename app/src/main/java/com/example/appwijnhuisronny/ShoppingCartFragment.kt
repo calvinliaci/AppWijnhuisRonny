@@ -10,8 +10,6 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.appwijnhuisronny.Adapters.ShoppingCartAdapter
-import com.example.appwijnhuisronny.Adapters.WhiteWineAdapter
-import com.example.appwijnhuisronny.databinding.FragmentHomepageBinding
 import com.example.appwijnhuisronny.databinding.FragmentShoppingCartBinding
 
 class ShoppingCartFragment : Fragment() {
