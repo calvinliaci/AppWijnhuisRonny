@@ -15,7 +15,7 @@ class CheckoutOrderViewModel() : ViewModel() {
         val stringBuilder = StringBuilder()
 
         // Thank you message
-        stringBuilder.append("Bestelling geplaatst door: , ${orderDetails.name}!\n\n")
+        stringBuilder.append("Bestelling geplaatst door: ${orderDetails.name}!\n\n")
 
         // Order details
         stringBuilder.append("Besteldetails:\n")

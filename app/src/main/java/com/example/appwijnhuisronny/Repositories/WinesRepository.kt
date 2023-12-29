@@ -11,13 +11,11 @@ import com.google.firebase.database.ValueEventListener
 
 class WinesRepository {
     private val databaseReference: DatabaseReference = FirebaseDatabase.getInstance().getReference("Wijnen")
-
     init {
         Log.d("Repository", "Database reference initialized: $databaseReference")
     }
 
     @Volatile private var INSTANCE : WinesRepository ?= null
-
     fun getInstance(): WinesRepository {
         Log.d("Repository", "Getting instance of WinesRepository")
         return INSTANCE ?: synchronized(this) {
@@ -28,10 +26,8 @@ class WinesRepository {
 
     fun loadWines(category: String, winesList: MutableLiveData<List<Wine>>) {
         val categoryReference = databaseReference.child(category)
-
         categoryReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                Log.d("Repository", "Data changed: $snapshot")
                 try {
                     val _winesList: List<Wine> = snapshot.children.map { dataSnapshot ->
                         val wineMap = dataSnapshot.value as Map<*, *>
@@ -48,12 +44,10 @@ class WinesRepository {
                         )
                     }
                     winesList.postValue(_winesList)
-                    Log.d("Repository", "Data loaded successfully")
                 } catch (e: Exception) {
                     Log.w("Repository", "Failed to read:", e)
                 }
             }
-
             override fun onCancelled(error: DatabaseError) {
                 Log.w("Repository", "Failed to read value.", error.toException())
             }

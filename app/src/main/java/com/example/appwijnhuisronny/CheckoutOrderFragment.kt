@@ -41,7 +41,7 @@ class CheckoutOrderFragment : Fragment() {
         binding.checkoutButton.setOnClickListener {
             try {
                 val subject = "Bestelbevestiging"
-                val emailSub = "liacicalvin@gmail.com"
+                val emailSub = "info@wijnhuisronny.be"
 
                 val name = binding.nameEditText.text.toString().trim()
                 val email = binding.mailEditText.text.toString().trim()
