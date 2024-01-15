@@ -14,16 +14,11 @@ class ShoppingCartViewModel : ViewModel() {
         val currentList = _shoppingCart.value ?: emptyList()
         val updatedList = currentList.toMutableList()
 
-        // Check if the item is already in the cart
         val existingItem = updatedList.find { it == item }
 
         if (existingItem == null) {
-            // If not, add it to the cart
             updatedList.add(item)
         } else {
-            // If yes, update the quantity or take appropriate action
-            // For example, you might want to update the quantity of the existing item
-            // by incrementing a quantity field
             existingItem.Aantal++
             existingItem.TotalPrice = existingItem.Prijs!!.toDouble() * existingItem.Aantal
         }
